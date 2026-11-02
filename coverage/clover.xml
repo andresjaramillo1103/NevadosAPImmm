@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1793579205904" clover="3.2.0">
+  <project timestamp="1793579205904" name="All files">
+    <metrics statements="22" coveredstatements="21" conditionals="24" coveredconditionals="23" methods="4" coveredmethods="4" elements="50" coveredelements="48" complexity="0" loc="22" ncloc="22" packages="1" files="1" classes="1"/>
+    <file name="validacionesPedido.js" path="C:\Users\laura\Documents\GitHub\NevadosAPImmm\validacionesPedido.js">
+      <metrics statements="22" coveredstatements="21" conditionals="24" coveredconditionals="23" methods="4" coveredmethods="4"/>
+      <line num="5" count="7" type="stmt"/>
+      <line num="6" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="7" type="cond" truecount="4" falsecount="0"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="14" count="4" type="stmt"/>
+      <line num="15" count="4" type="stmt"/>
+      <line num="16" count="4" type="stmt"/>
+      <line num="17" count="4" type="cond" truecount="3" falsecount="1"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="20" count="4" type="cond" truecount="4" falsecount="0"/>
+      <line num="21" count="2" type="stmt"/>
+      <line num="26" count="7" type="stmt"/>
+      <line num="31" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="32" count="4" type="stmt"/>
+      <line num="33" count="4" type="stmt"/>
+      <line num="34" count="4" type="stmt"/>
+      <line num="35" count="4" type="cond" truecount="4" falsecount="0"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="38" count="3" type="stmt"/>
+      <line num="42" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
