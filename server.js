@@ -2,7 +2,7 @@ const express = require('express');
 const conexion = require('./db');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 
- // Endpoint 1: consultar todos los sabores desde MySQL
+ 
 app.get('/api/v1/sabores', async (req, res) => {
   try {
     const [sabores] = await conexion.query(
@@ -44,9 +44,6 @@ app.get('/api/v1/sabores', async (req, res) => {
 
 
 
- // Endpoint 2: consultar un sabor por su ID
-
- // Endpoint 2: consultar un sabor por su ID desde MySQL
 app.get('/api/v1/sabores/:id', async (req, res) => {
   try {
     const id = Number(req.params.id);
@@ -97,9 +94,7 @@ app.get('/api/v1/sabores/:id', async (req, res) => {
 });
 
 
- // Endpoint 3: registrar un pedido
-
- // Endpoint 3: registrar un pedido en MySQL
+ 
 app.post('/api/v1/pedidos', async (req, res) => {
   const { cliente, telefono, productos } = req.body;
 
@@ -226,10 +221,6 @@ app.post('/api/v1/pedidos', async (req, res) => {
 });
 
 
-
- // Endpoint 4: consultar un pedido por su ID
-
- // Endpoint 4: consultar un pedido por su ID desde MySQL
 app.get('/api/v1/pedidos/:id', async (req, res) => {
   const id = Number(req.params.id);
 
@@ -244,10 +235,11 @@ app.get('/api/v1/pedidos/:id', async (req, res) => {
 
   try {
     const [pedidos] = await conexion.query(
-      'SELECT id, cliente, telefono, fecha FROM pedidos WHERE id = ?',
-      [id]
-    );
-
+  'SELECT id, cliente, telefono, fecha, estado FROM pedidos WHERE id = ?',
+  [id]
+    
+);
+console.log('PEDIDO CONSULTADO:', pedidos[0]);
     if (pedidos.length === 0) {
       return res.status(404).json({
         success: false,
@@ -299,10 +291,6 @@ app.get('/api/v1/pedidos/:id', async (req, res) => {
 });
 
 
-
- // Endpoint 5: consultar todos los pedidos
-
- // Endpoint 5: consultar todos los pedidos desde MySQL
 app.get('/api/v1/pedidos', async (req, res) => {
   try {
     const [pedidos] = await conexion.query(
@@ -349,6 +337,6 @@ app.get('/api/v1/pedidos', async (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-  console.log(`API de Nevados disponible en http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`API de Nevados disponible en el puerto ${PORT}`);
 });
